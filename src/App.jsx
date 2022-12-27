@@ -15,8 +15,18 @@ function App() {
         </div>
 
         <div className="form">
-          <Input type="text" label="Produto" id="produto" />
-          <Input type="number" label="Valor" id="valor" />
+          <Input
+            type="text"
+            label="Produto"
+            placeholder="Digite o produto"
+            id="produto"
+          />
+          <Input
+            type="number"
+            label="Valor"
+            placeholder="Digite o valor"
+            id="valor"
+          />
           <div className="buttons">
             <button>enviar</button>
             <button>cancelar</button>
