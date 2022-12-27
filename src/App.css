@@ -39,3 +39,24 @@ body {
   border: 1px solid #333;
   border-radius: 0.5rem;
 }
+.buttons {
+  margin-top: 1rem;
+}
+.buttons button {
+  background: #fb1;
+  font-family: var(--first-font);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.7rem;
+  margin-right: 0.5rem;
+  font-weight: bolder;
+  border-radius: 0.5rem;
+  color: white;
+  border: 2px solid #eee;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #fba;
+  color: #aaa;
+}
