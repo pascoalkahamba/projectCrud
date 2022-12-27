@@ -1,6 +1,7 @@
-import react from "react";
+import React from "react";
 import "./App.css";
 import Input from "./Components/Input";
+import ProductInformation from "./Components/ProductInformation";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <button>cancelar</button>
           </div>
         </div>
+        <ProductInformation />
       </section>
     </div>
   );
