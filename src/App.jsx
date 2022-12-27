@@ -1,5 +1,6 @@
 import react from "react";
 import "./App.css";
+import Input from "./Components/Input";
 
 function App() {
   return (
@@ -14,14 +15,8 @@ function App() {
         </div>
 
         <div className="form">
-          <div className="data">
-            <label htmlFor="nome">Produto</label>
-            <input type="text" id="nome" />
-          </div>
-          <div className="data">
-            <label htmlFor="value">Valor</label>
-            <input type="text" id="value" />
-          </div>
+          <Input type="text" label="Produto" id="produto" />
+          <Input type="number" label="Valor" id="valor" />
           <div className="buttons">
             <button>enviar</button>
             <button>cancelar</button>
