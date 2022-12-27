@@ -9,13 +9,13 @@ const ProductInformation = () => {
         <th>Valor</th>
         <th>Ações</th>
       </tr>
-      <tr>
+      <tr className="bodytr">
         <td>01</td>
         <td>Notebook</td>
         <td>200.000</td>
         <td>encluir, editar</td>
       </tr>
-      <tr>
+      <tr className="bodytr">
         <td>01</td>
         <td>Smartphone</td>
         <td>100.000</td>
