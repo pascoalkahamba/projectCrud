@@ -1,1 +1,23 @@
- 
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  --first-font: Arial, Helvetica, sans-serif;
+  font-family: var(--first-font);
+  font-size: 1.2rem;
+  background: #eee;
+}
+.header {
+  background: #fb1;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.title {
+  padding: 0.5rem;
+}
+.container {
+  margin-top: 2rem;
+}
