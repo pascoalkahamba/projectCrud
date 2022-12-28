@@ -1,4 +1,6 @@
 import React from "react";
+import Delete from "./Delete";
+import Edit from "./Edit";
 
 const ProductInformation = () => {
   return (
@@ -13,13 +15,10 @@ const ProductInformation = () => {
         <td>01</td>
         <td>Notebook</td>
         <td>200.000</td>
-        <td>encluir, editar</td>
-      </tr>
-      <tr className="bodytr">
-        <td>01</td>
-        <td>Smartphone</td>
-        <td>100.000</td>
-        <td>encluir, editar</td>
+        <td>
+          <Edit />
+          <Delete />
+        </td>
       </tr>
     </table>
   );
