@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./App.css";
-import Input from "./Components/Input";
+import Myform from "./Components/Myform";
 import ProductInformation from "./Components/ProductInformation";
 
 function App() {
+  const [name, setName] = useState([]);
+  const [price, setPrice] = useState([]);
+
+  function saveData(value) {
+    setName([...name, value]);
+    console.log(value);
+    console.log(name);
+  }
   return (
     <div className="App">
       <header className="header">
@@ -14,25 +23,7 @@ function App() {
           <h1>Produtos</h1>
           <span>Lista de produtos da minha loja</span>
         </div>
-
-        <div className="form">
-          <Input
-            type="text"
-            label="Produto"
-            placeholder="Digite o produto"
-            id="produto"
-          />
-          <Input
-            type="number"
-            label="Valor"
-            placeholder="Digite o valor"
-            id="valor"
-          />
-          <div className="buttons">
-            <button>enviar</button>
-            <button>cancelar</button>
-          </div>
-        </div>
+        <Myform saveData={saveData} />
         <ProductInformation />
       </section>
     </div>

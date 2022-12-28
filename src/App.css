@@ -32,7 +32,7 @@ img:hover {
 }
 .container {
   max-width: 40rem;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
 }
 .form {
   width: 100%;
@@ -80,6 +80,9 @@ img:hover {
   border-radius: 0.5rem;
   border-collapse: collapse;
   width: 100%;
+}
+label {
+  margin-top: 0.5rem;
 }
 
 .table tr,
