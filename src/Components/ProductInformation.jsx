@@ -15,7 +15,7 @@ const ProductInformation = () => {
         <td>01</td>
         <td>Notebook</td>
         <td>200.000</td>
-        <td>
+        <td className="flexIcon">
           <Edit />
           <Delete />
         </td>
