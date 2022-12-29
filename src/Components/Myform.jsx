@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Myform = ({ saveData }) => {
-  const [form, setForm] = useState({ nome: "", valor: "" });
+  const [form, setForm] = useState({ product: "", price: "" });
   function handleChange({ target }) {
     setForm({ ...form, [target.id]: target.value });
   }
@@ -12,21 +12,21 @@ const Myform = ({ saveData }) => {
   }
   return (
     <form className="form data">
-      <label htmlFor="nome">Produto</label>
+      <label htmlFor="product">Produto</label>
 
       <input
         type="text"
-        id="nome"
+        id="product"
         placeholder="Digite o produto"
         onChange={handleChange}
-        value={form.nome}
+        value={form.product}
       />
-      <label htmlFor="valor">Valor</label>
+      <label htmlFor="price">Valor</label>
       <input
         type="number"
-        id="valor"
-        value={form.valor}
-        placeholder="Digite o valor"
+        id="price"
+        value={form.price}
+        placeholder="Digite o price"
         onChange={handleChange}
       />
       <div className="buttons">

@@ -2,7 +2,8 @@ import React from "react";
 import Delete from "./Delete";
 import Edit from "./Edit";
 
-const ProductInformation = () => {
+const ProductInformation = ({ data }) => {
+  if (data.length === 0) return null;
   return (
     <table className="table">
       <thead>
@@ -13,17 +14,19 @@ const ProductInformation = () => {
           <th>Ações</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>01</td>
-          <td>Notebook</td>
-          <td>200.000</td>
-          <td className="flexIcon">
-            <Edit />
-            <Delete />
-          </td>
-        </tr>
-      </tbody>
+      {data.map((elem, index) => (
+        <tbody key={index}>
+          <tr>
+            <td> {1 + index}</td>
+            <td>{elem.product}</td>
+            <td>{elem.price}</td>
+            <td className="flexIcon">
+              <Edit />
+              <Delete />
+            </td>
+          </tr>
+        </tbody>
+      ))}
     </table>
   );
 };

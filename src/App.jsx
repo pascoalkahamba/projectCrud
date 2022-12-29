@@ -5,13 +5,12 @@ import Myform from "./Components/Myform";
 import ProductInformation from "./Components/ProductInformation";
 
 function App() {
-  const [name, setName] = useState([]);
-  const [price, setPrice] = useState([]);
+  const [data, setData] = useState([]);
 
   function saveData(value) {
-    setName([...name, value]);
+    setData([...data, value]);
     console.log(value);
-    console.log(name);
+    console.log(data);
   }
   return (
     <div className="App">
@@ -24,7 +23,7 @@ function App() {
           <span>Lista de produtos da minha loja</span>
         </div>
         <Myform saveData={saveData} />
-        <ProductInformation />
+        <ProductInformation data={data} />
       </section>
     </div>
   );
