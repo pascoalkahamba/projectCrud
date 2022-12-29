@@ -2,13 +2,29 @@ import React, { useState } from "react";
 
 const Myform = ({ saveData }) => {
   const [form, setForm] = useState({ product: "", price: "" });
+
   function handleChange({ target }) {
     setForm({ ...form, [target.id]: target.value });
   }
+  function isEmpty(products) {
+    if (products.product === "" && products.price === "") {
+      alert("Digite o produto \n Digite o  preço");
+      return false;
+    }
+    if (products.product === "") {
+      alert("Digite o produto\n");
+      return false;
+    }
+    if (products.price === "") {
+      alert("Digite o preço");
+      return false;
+    } else {
+      return true;
+    }
+  }
   function handleClick(event) {
     event.preventDefault();
-    saveData(form);
-    console.log(form);
+    if (isEmpty(form)) saveData(form);
   }
   return (
     <form className="form data">
