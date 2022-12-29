@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 const Myform = ({ saveData }) => {
-  const [texto, setTexto] = useState("");
+  const [form, setForm] = useState({ nome: "", valor: "" });
+  function handleChange({ target }) {
+    setForm({ ...form, [target.id]: target.value });
+  }
   function handleClick(event) {
     event.preventDefault();
-    saveData(texto);
-    console.log(texto);
+    saveData(form);
+    console.log(form);
   }
   return (
     <form className="form data">
@@ -15,11 +18,17 @@ const Myform = ({ saveData }) => {
         type="text"
         id="nome"
         placeholder="Digite o produto"
-        value={texto}
-        onChange={({ target }) => setTexto(target.value)}
+        onChange={handleChange}
+        value={form.nome}
       />
       <label htmlFor="valor">Valor</label>
-      <input type="number" id="valor" placeholder="Digite o valor" />
+      <input
+        type="number"
+        id="valor"
+        value={form.valor}
+        placeholder="Digite o valor"
+        onChange={handleChange}
+      />
       <div className="buttons">
         <button onClick={handleClick}>salvar</button>
         <button>cancelar</button>
