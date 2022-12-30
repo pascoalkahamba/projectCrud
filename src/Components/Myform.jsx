@@ -7,20 +7,23 @@ const Myform = ({ saveData }) => {
     setForm({ ...form, [target.id]: target.value });
   }
   function isEmpty(products) {
-    if (products.product === "" && products.price === "") {
-      alert("Digite o produto \n Digite o  preço");
-      return false;
-    }
+    let message = "";
     if (products.product === "") {
-      alert("Digite o produto\n");
-      return false;
+      message += "Digite o nome do produto\n";
     }
     if (products.price === "") {
-      alert("Digite o preço");
-      return false;
-    } else {
-      return true;
+      message += "Digite o preço";
     }
+    if (message !== "") {
+      alert(message);
+      return false;
+    }
+    return true;
+  }
+  function handleCancel(event) {
+    event.preventDefault();
+    console.log("Cancelar");
+    // form.product.focus();
   }
   function handleClick(event) {
     event.preventDefault();
@@ -47,7 +50,7 @@ const Myform = ({ saveData }) => {
       />
       <div className="buttons">
         <button onClick={handleClick}>salvar</button>
-        <button>cancelar</button>
+        <button onClick={handleCancel}>cancelar</button>
       </div>
     </form>
   );

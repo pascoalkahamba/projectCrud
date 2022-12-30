@@ -2,7 +2,7 @@ import React from "react";
 import Delete from "./Delete";
 import Edit from "./Edit";
 
-const ProductInformation = ({ data }) => {
+const ProductInformation = ({ data, setData }) => {
   if (data.length === 0) return null;
   return (
     <table className="table">
@@ -17,12 +17,12 @@ const ProductInformation = ({ data }) => {
       {data.map((elem, index) => (
         <tbody key={index}>
           <tr>
-            <td> {1 + index}</td>
+            <td> {index + 1}</td>
             <td>{elem.product}</td>
             <td>{elem.price}</td>
             <td className="flexIcon">
-              <Edit />
-              <Delete />
+              <Edit elem={elem} />
+              <Delete data={data} index={index} setData={setData} />
             </td>
           </tr>
         </tbody>

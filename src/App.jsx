@@ -23,7 +23,7 @@ function App() {
           <span>Lista de produtos da minha loja</span>
         </div>
         <Myform saveData={saveData} />
-        <ProductInformation data={data} />
+        <ProductInformation data={data} setData={setData} />
       </section>
     </div>
   );

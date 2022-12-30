@@ -1,9 +1,14 @@
 import React from "react";
 import photo from "../img/download.png";
 
-const Delete = () => {
+const Delete = ({ index, data, setData }) => {
+  function handleDelete() {
+    const newData = data.filter((item, id) => id != index);
+    setData(newData);
+    console.log(newData);
+  }
   return (
-    <div>
+    <div onClick={handleDelete}>
       <img src={photo} alt="Photo for delete element" />
     </div>
   );
