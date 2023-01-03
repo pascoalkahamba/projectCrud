@@ -3,11 +3,10 @@ import photo from "../img/download.png";
 
 const Delete = ({ index, data, setData }) => {
   function handleDelete() {
-    const newData = data.filter((item, id) => id != index);
-
-    console.log(index);
-    setData(newData);
-    console.log(newData);
+    if (confirm(`Deseja excluir o item ${index + 1} da lista?`)) {
+      const newData = data.filter((item, id) => id != index);
+      setData(newData);
+    }
   }
   return (
     <div onClick={handleDelete}>

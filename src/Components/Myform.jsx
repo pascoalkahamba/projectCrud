@@ -22,8 +22,7 @@ const Myform = ({ saveData }) => {
   }
   function handleCancel(event) {
     event.preventDefault();
-    console.log("Cancelar");
-    // form.product.focus();
+    setForm({ product: "", price: "" });
   }
   function handleClick(event) {
     event.preventDefault();
