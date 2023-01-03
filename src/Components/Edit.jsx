@@ -1,9 +1,11 @@
 import React from "react";
 import photo from "../img/icons8-edit-30.png";
 
-const Edit = ({ index }) => {
-  console.log(index);
+const Edit = ({ elem, setData, data, setForm, setEdit, setUpdateName }) => {
   function handleEdit() {
+    setUpdateName("Atualizar");
+    setEdit(true);
+    setForm(elem);
     console.log("Edit");
   }
   return (

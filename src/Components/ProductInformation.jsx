@@ -2,7 +2,13 @@ import React from "react";
 import Delete from "./Delete";
 import Edit from "./Edit";
 
-const ProductInformation = ({ data, setData }) => {
+const ProductInformation = ({
+  data,
+  setData,
+  setForm,
+  setEdit,
+  setUpdateName,
+}) => {
   if (data.length === 0) return null;
   return (
     <table className="table">
@@ -21,7 +27,15 @@ const ProductInformation = ({ data, setData }) => {
             <td>{elem.product}</td>
             <td>{elem.price}</td>
             <td className="flexIcon">
-              <Edit elem={elem} />
+              <Edit
+                data={data}
+                index={index}
+                setData={setData}
+                elem={elem}
+                setForm={setForm}
+                setEdit={setEdit}
+                setUpdateName={setUpdateName}
+              />
               <Delete data={data} index={index} setData={setData} />
             </td>
           </tr>

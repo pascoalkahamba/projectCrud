@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Myform = ({ saveData }) => {
-  const [form, setForm] = useState({ product: "", price: "" });
-
+const Myform = ({
+  saveData,
+  setForm,
+  form,
+  updateName,
+  setUpdateName,
+  setEdit,
+}) => {
   function handleChange({ target }) {
     setForm({ ...form, [target.id]: target.value });
   }
@@ -16,17 +21,19 @@ const Myform = ({ saveData }) => {
     }
     if (message !== "") {
       alert(message);
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
   function handleCancel(event) {
     event.preventDefault();
     setForm({ product: "", price: "" });
+    setEdit(null);
+    setUpdateName("Salvar");
   }
   function handleClick(event) {
     event.preventDefault();
-    if (isEmpty(form)) saveData(form);
+    if (!isEmpty(form)) saveData();
   }
   return (
     <form className="form data">
@@ -48,7 +55,7 @@ const Myform = ({ saveData }) => {
         onChange={handleChange}
       />
       <div className="buttons">
-        <button onClick={handleClick}>salvar</button>
+        <button onClick={handleClick}> {updateName}</button>
         <button onClick={handleCancel}>cancelar</button>
       </div>
     </form>
