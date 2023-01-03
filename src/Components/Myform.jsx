@@ -45,7 +45,7 @@ const Myform = ({ saveData }) => {
         type="number"
         id="price"
         value={form.price}
-        placeholder="Digite o price"
+        placeholder="Digite o preço"
         onChange={handleChange}
       />
       <div className="buttons">
