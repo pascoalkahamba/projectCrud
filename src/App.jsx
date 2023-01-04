@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "./App.css";
+import Head from "./Components/Head";
 import Myform from "./Components/Myform";
 import ProductInformation from "./Components/ProductInformation";
 
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
+        <Head title="Pascoal Kahamba | CRUD" />
         <h1>Minha Empresa</h1>
       </header>
       <section className="container">

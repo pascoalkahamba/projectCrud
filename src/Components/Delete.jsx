@@ -1,5 +1,6 @@
 import React from "react";
 import photo from "../img/download.png";
+import Head from "./Head";
 
 const Delete = ({ data, setData, index }) => {
   function handleDelete() {
