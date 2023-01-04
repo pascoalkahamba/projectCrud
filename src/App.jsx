@@ -16,7 +16,7 @@ function App() {
       setId((id) => id + 1);
     } else {
       const newData = data.map((element) => {
-        if (element.id == index) {
+        if (element.id === index) {
           return form;
         } else {
           return element;

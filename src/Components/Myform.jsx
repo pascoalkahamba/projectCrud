@@ -47,7 +47,9 @@ const Myform = ({ saveData, setForm, form, index, setIndex }) => {
         onChange={handleChange}
       />
       <div className="buttons">
-        <button onClick={handleClick}>{index ? "Atualizar" : "Salvar"}</button>
+        <button onClick={handleClick}>
+          {index !== null ? "Atualizar" : "Salvar"}
+        </button>
         <button onClick={handleCancel}>cancelar</button>
       </div>
     </form>
