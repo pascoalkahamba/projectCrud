@@ -9,7 +9,7 @@ const Delete = ({ data, setData, index }) => {
   }
 
   return (
-    <button onClick={handleDelete} disabled={index ? true : null}>
+    <button onClick={handleDelete} disabled={index ? true : false}>
       <img src={photo} alt="Photo for delete element" />
     </button>
   );
