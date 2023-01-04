@@ -1,17 +1,15 @@
 import React from "react";
 import photo from "../img/icons8-edit-30.png";
 
-const Edit = ({ elem, setData, data, setForm, setEdit, setUpdateName }) => {
+const Edit = ({ elem, setForm, setIndex }) => {
   function handleEdit() {
-    setUpdateName("Atualizar");
-    setEdit(true);
+    setIndex(elem.id);
     setForm(elem);
-    console.log("Edit");
   }
   return (
-    <div onClick={handleEdit}>
+    <button onClick={handleEdit}>
       <img src={photo} alt="Photo for edit element" />
-    </div>
+    </button>
   );
 };
 

@@ -1,13 +1,6 @@
 import React from "react";
 
-const Myform = ({
-  saveData,
-  setForm,
-  form,
-  updateName,
-  setUpdateName,
-  setEdit,
-}) => {
+const Myform = ({ saveData, setForm, form, index, setIndex }) => {
   function handleChange({ target }) {
     setForm({ ...form, [target.id]: target.value });
   }
@@ -28,8 +21,7 @@ const Myform = ({
   function handleCancel(event) {
     event.preventDefault();
     setForm({ product: "", price: "" });
-    setEdit(null);
-    setUpdateName("Salvar");
+    setIndex(null);
   }
   function handleClick(event) {
     event.preventDefault();
@@ -55,7 +47,7 @@ const Myform = ({
         onChange={handleChange}
       />
       <div className="buttons">
-        <button onClick={handleClick}> {updateName}</button>
+        <button onClick={handleClick}>{index ? "Atualizar" : "Salvar"}</button>
         <button onClick={handleCancel}>cancelar</button>
       </div>
     </form>

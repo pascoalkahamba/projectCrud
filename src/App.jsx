@@ -7,12 +7,25 @@ import ProductInformation from "./Components/ProductInformation";
 function App() {
   const [data, setData] = useState([]);
   const [form, setForm] = useState({ product: "", price: "" });
-  const [edit, setEdit] = useState(null);
-  const [updateName, setUpdateName] = useState("Salvar");
+  const [id, setId] = useState(0);
+  const [index, setIndex] = useState(null);
+
   function saveData() {
-    if (edit === null) {
-      setData([...data, form]);
+    if (index === null) {
+      setData([...data, { ...form, id }]);
+      setId((id) => id + 1);
+    } else {
+      const newData = data.map((element) => {
+        if (element.id == index) {
+          return form;
+        } else {
+          return element;
+        }
+      });
+      setData(newData);
+      setIndex(null);
     }
+
     setForm({ product: "", price: "" });
   }
 
@@ -30,16 +43,15 @@ function App() {
           setForm={setForm}
           saveData={saveData}
           form={form}
-          updateName={updateName}
-          setUpdateName={setUpdateName}
-          setEdit={setEdit}
+          index={index}
+          setIndex={setIndex}
         />
         <ProductInformation
           data={data}
           setData={setData}
           setForm={setForm}
-          setEdit={setEdit}
-          setUpdateName={setUpdateName}
+          setIndex={setIndex}
+          index={index}
         />
       </section>
     </div>

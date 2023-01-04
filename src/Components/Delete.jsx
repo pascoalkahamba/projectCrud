@@ -1,17 +1,17 @@
 import React from "react";
 import photo from "../img/download.png";
 
-const Delete = ({ index, data, setData }) => {
+const Delete = ({ data, setData, index }) => {
   function handleDelete() {
-    if (confirm(`Deseja excluir o item ${index + 1} da lista?`)) {
-      const newData = data.filter((item, id) => id != index);
-      setData(newData);
+    if (confirm(`Deseja excluir o item ${data.id + 1} da lista?`)) {
+      setData((preview) => preview.filter((item) => item.id != data.id));
     }
   }
+
   return (
-    <div onClick={handleDelete}>
+    <button onClick={handleDelete} disabled={index ? true : null}>
       <img src={photo} alt="Photo for delete element" />
-    </div>
+    </button>
   );
 };
 

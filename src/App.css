@@ -89,6 +89,7 @@ label {
 td {
   border: 2px solid #333;
 }
+
 .head {
   background: rgba(77, 76, 76, 0.671);
   padding: 0.4rem;
@@ -97,4 +98,7 @@ td {
   display: flex;
   border: none;
   justify-content: space-around;
+}
+.flexIcon > button {
+  border: none;
 }
